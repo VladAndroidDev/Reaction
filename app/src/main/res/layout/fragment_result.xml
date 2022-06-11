@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.v.nevi.p.sv.android.reaction.result.ResultViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_close_24"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="@{()->viewmodel.onCloseClick()}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/text_results"/>
+
+        <TextView
+            android:id="@+id/text_results"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/results"
+            style="@style/Header1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.exerciseNameId}"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/text_results"
+            app:layout_constraintStart_toStartOf="@id/text_results"
+            />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            style="@style/Header2"
+            android:text="@{viewmodel.isPassed ? @string/test_passed : @string/test_failed}"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header"/>
+
+        <TextView
+            android:id="@+id/result_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodel.resultDescription}"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_time_reaction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            style="@style/Header3"
+            android:text="@string/reaction_time_millisec"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result_description"
+            app:layout_constraintEnd_toStartOf="@id/time_reaction"
+            app:layout_constraintHorizontal_bias="0.0"
+            />
+
+        <TextView
+            android:id="@+id/time_reaction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="12dp"
+            android:text="@{viewmodel.time}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_time_reaction"
+            app:layout_constraintBottom_toBottomOf="@id/text_time_reaction"
+            app:layout_constraintHorizontal_bias="1.0"
+            />
+
+        <TextView
+            android:id="@+id/text_limit_for_passing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@{@string/minimum_limit_for_passing+viewmodel.minimumTimeForPassing}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_time_reaction"
+            app:layout_constraintEnd_toStartOf="@id/time_reaction"
+            app:layout_constraintHorizontal_bias="0.0"
+            />
+
+
+        <TextView
+            android:id="@+id/text_number_mistakes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/Header3"
+            android:layout_marginTop="56dp"
+            android:text="@string/number_of_mistakes"
+            app:layout_constraintTop_toBottomOf="@id/text_limit_for_passing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/number_mistakes"
+            app:layout_constraintHorizontal_bias="0.0"/>
+
+        <TextView
+            android:id="@+id/number_mistakes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="12dp"
+            android:text="@{viewmodel.numberMistakes}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_number_mistakes"
+            app:layout_constraintBottom_toBottomOf="@id/text_number_mistakes"
+            app:layout_constraintHorizontal_bias="1.0"
+             />
+
+        <TextView
+            android:id="@+id/text_minimum_mistakes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@{@string/the_number_of_errors_should_not_exceed+viewmodel.minimumMistakes}"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toStartOf="@+id/number_mistakes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_number_mistakes"
+            />
+
+
+        <Button
+            android:id="@+id/button_to_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{()->viewmodel.onMenuClick()}"
+            app:layout_constraintTop_toBottomOf="@id/text_minimum_mistakes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_repeat"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/button_repeat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/repeat"
+            android:layout_marginStart="8dp"
+            android:onClick="@{()->viewmodel.onRepeatClick()}"
+            app:layout_constraintTop_toBottomOf="@id/text_minimum_mistakes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_to_menu"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="12dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

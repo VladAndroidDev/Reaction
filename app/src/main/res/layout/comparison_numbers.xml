@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.v.nevi.p.sv.android.reaction.exercises.ExerciseViewModel" />
+
+        <variable
+            name="data"
+            type="com.v.nevi.p.sv.android.reaction.exercises.numbercomparison.ComparisonNumbersData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/first_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="70dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            android:text="@{data.firstValue}"
+            android:padding="12dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->viewmodel.onAnswerClicked(v)}"/>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/circle"/>
+
+        <TextView
+            android:id="@+id/second_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            android:text="@{data.secondValue}"
+            android:padding="12dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:onClick="@{(v)->viewmodel.onAnswerClicked(v)}"/>
+
+    </LinearLayout>
+</layout>

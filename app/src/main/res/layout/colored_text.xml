@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.v.nevi.p.sv.android.reaction.exercises.coloredtext.ColoredTextData" />
+
+        <variable
+            name="viewmodel"
+            type="com.v.nevi.p.sv.android.reaction.exercises.ExerciseViewModel" />
+    </data>
+
+    <merge
+        tools:parentTag="android.widget.FrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <com.v.nevi.p.sv.android.reaction.views.ClickEffectView
+            android:id="@+id/color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="128dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/shape_change_color_view"
+            android:onClick="@{(v)->viewmodel.onAnswerClicked(v)}"
+            app:color="@{data.colorId}"
+            />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                app:text_id="@{data.textId}"
+                app:layout_constraintEnd_toEndOf="@id/color"
+                app:layout_constraintTop_toTopOf="@id/color"
+                app:layout_constraintBottom_toBottomOf="@id/color"
+                app:layout_constraintStart_toStartOf="@id/color"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </merge>
+</layout>

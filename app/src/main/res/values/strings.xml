@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Reaction training</string>
+    <string name="start">Start</string>
+
+    <string name="results">Results</string>
+    <string name="repeat">Repeat</string>
+    <string name="home">Home</string>
+    <string name="change_color">Change color</string>
+    <string name="change_color_description">Click on the frame as quickly as possible when you see the color change</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="five">Five</string>
+    <string name="six">Six</string>
+    <string name="seven">Seven</string>
+    <string name="eight">Eight</string>
+    <string name="nine">Nine</string>
+    <string name="reaction_time_millisec">Reaction time (millisec):</string>
+    <string name="number_of_mistakes">Number of mistakes:</string>
+    <string name="the_number_of_errors_should_not_exceed">The number of errors should not exceed</string>
+    <string name="minimum_limit_for_passing">Minimum limit for passing</string>
+    <string name="test_passed">Test passed!</string>
+    <string name="test_failed">Test failed! </string>
+    <string name="many_mistakes">You have made many mistakes</string>
+    <string name="many_time">Your time is over the minimum limit</string>
+    <string name="сongratulations">Congratulations you passed the test</string>
+    <string name="comparison_numbers">Comparison of numbers</string>
+    <string name="comparison_numbers_description">Look at the dot in the center and choose a largest number as quickly as possible</string>
+
+
+    <string name="find_number">Find a number</string>
+    <string name="find_number_description">When the word change, select the corresponding number as quickly as possible.</string>
+    <string name="catch_ball">Catch the ball</string>
+    <string name="catch_ball_description">Click on the moving ball as fast as possible</string>
+    <string name="red">Red</string>
+    <string name="purple">Purple</string>
+    <string name="pink">Pink</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="teal">Teal</string>
+    <string name="orange">Orange</string>
+    <string name="grey">Grey</string>
+    <string name="yellow">Yellow</string>
+    <string name="find_color">Find color</string>
+    <string name="find_color_description">In each round, the word will change, click on the appropriate color as quickly as possible</string>
+    <string name="brown">Brown</string>
+    <string name="catch_color">Catch the color</string>
+    <string name="catch_color_description">Click on the green color as quickly as possible. Avoid clicking on the red color</string>
+    <string name="sec">sec</string>
+    <string name="number_of_rounds">Number of rounds:</string>
+    <string name="number_of_repetitions_in_training">Number of repetitions in training</string>
+    <string name="change_color_small_desc">Reaction to color change</string>
+    <string name="find_number_small_desc">Search by text representation</string>
+    <string name="catch_ball_desc">Reaction on moving ball</string>
+    <string name="comparison_numbers_desc">Compare the numbers and pick the higher one</string>
+    <string name="find_color_desc">By textual representation</string>
+    <string name="catch_color_desc">Reaction to cell color change</string>
+
+    <string name="menu">Menu</string>
+    <string name="menu_description">Do different exercises every day. You will see results very soon</string>
+    <string name="rate_us">Rate us</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="ok">OK</string>
+    <string name="open_with_ads">Open with ads</string>
+    <string name="blocked">Blocked</string>
+    <string name="blocked_message">You need to pass the previous level to open the next one</string>
+    <string name="settings">Settings</string>
+    <string name="no_loaded">Failed to download, try again later or check internet connections</string>
+    <string name="colored_text">Colored text</string>
+    <string name="colored_text_desc">Reaction to color and text matching</string>
+    <string name="colored_text_description">Click on the frame as soon as the color matches the text. Do it as fast as you can</string>
+    <string name="math">Math</string>
+    <string name="math_description">Choose the correct answer as quickly as possible</string>
+    <string name="math_desc">Solving simple mathematical problems at speed</string>
+
+</resources>

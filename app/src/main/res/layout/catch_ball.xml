@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.v.nevi.p.sv.android.reaction.exercises.ExerciseViewModel" />
+
+        <variable
+            name="data"
+            type="com.v.nevi.p.sv.android.reaction.exercises.catchball.CatchBallData" />
+    </data>
+
+    <merge>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_change_color_view"
+            android:padding="2dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="128dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            >
+
+        <com.v.nevi.p.sv.android.reaction.views.BallView
+            android:id="@+id/ball_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{(v)->viewmodel.onAnswerClicked(v)}"
+            app:moving="@{data.isMoving}"
+            />
+
+        </FrameLayout>
+    </merge>
+</layout>

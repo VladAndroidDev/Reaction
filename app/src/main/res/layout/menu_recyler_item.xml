@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewmodel"
+            type="com.v.nevi.p.sv.android.reaction.menu.MenuViewModel" />
+
+        <variable
+            name="exercise"
+            type="com.v.nevi.p.sv.android.reaction.exercises.Exercise" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="@{()->viewmodel.onItemClick(exercise)}"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:color="?android:attr/colorControlHighlight"
+        app:cardCornerRadius="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@{String.valueOf(position)+String.valueOf('.')+String.valueOf(' ')}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="1. " />
+
+            <TextView
+                android:id="@+id/name_exercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@{exercise.nameId}"
+                app:layout_constraintStart_toEndOf="@id/number"
+                app:layout_constraintEnd_toStartOf="@id/best_time"
+                app:layout_constraintBottom_toBottomOf="@id/number"
+                app:layout_constraintHorizontal_bias="0.0"
+                tools:text="Catch color" />
+
+            <TextView
+                android:id="@+id/small_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@{exercise.smallDescription}"
+                app:layout_constraintTop_toBottomOf="@id/name_exercise"
+                app:layout_constraintStart_toStartOf="@id/name_exercise"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintHorizontal_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.82"/>
+
+            <TextView
+                android:id="@+id/best_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="@{ exercise.bestTime==0 ? String.valueOf('?') : String.valueOf('m')+String.valueOf('c')+String.valueOf(' ')+String.valueOf(exercise.bestTime)}"
+                android:visibility="@{exercise.isOpened ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/name_exercise"
+                app:layout_constraintBottom_toBottomOf="@id/name_exercise"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                tools:text="mc 1000" />
+
+
+            <ImageView
+                android:id="@+id/locked"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_lock_24"
+                android:visibility="@{exercise.isOpened ? View.GONE : View.VISIBLE}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/guideline"/>
+
+
+                <ImageView
+                    android:id="@+id/is_solved"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@{exercise.bestTime &lt;= exercise.minimumTime ? @drawable/ic_baseline_check_24 : @drawable/ic_baseline_close_24}"
+                    android:visibility="@{exercise.bestTime > 0 &amp;&amp; exercise.isOpened ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/best_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

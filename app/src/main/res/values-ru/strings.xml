@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренировка реакции</string>
+    <string name="start">Старт</string>
+
+    <string name="results">Результат</string>
+    <string name="repeat">Повтор</string>
+    <string name="home">На главную</string>
+    <string name="change_color">Смена цвета</string>
+    <string name="change_color_description">Нажмите на рамку как можна быстрее, когда поменяется цвет </string>
+    <string name="one">Один</string>
+    <string name="two">Два</string>
+    <string name="three">Три</string>
+    <string name="four">Четыри</string>
+    <string name="five">Пять</string>
+    <string name="six">Шесть</string>
+    <string name="seven">Семь</string>
+    <string name="eight">Восемь</string>
+    <string name="nine">Девять</string>
+    <string name="reaction_time_millisec">Время реакции (милисек):</string>
+    <string name="number_of_mistakes">Количество ошибок:</string>
+    <string name="the_number_of_errors_should_not_exceed">Количесвто ошибок не должно быть больше</string>
+    <string name="minimum_limit_for_passing">Минимальное время для прохождения</string>
+    <string name="test_passed">Тест пройдено!</string>
+    <string name="test_failed">Тест провален! </string>
+    <string name="many_mistakes">Вы сделали много ошибок</string>
+    <string name="many_time">Ваше время больше минимального лимита</string>
+    <string name="сongratulations">Поздравляем, вы прошли тест</string>
+    <string name="comparison_numbers">Сравнение чисел</string>
+    <string name="comparison_numbers_description">Смотрите на точку в центре и как можно быстрее выберайте наибольшее число</string>
+
+
+    <string name="find_number">Найди цифру</string>
+    <string name="find_number_description">Когда меняется слово, выберите соответствующую цифру как можно быстре</string>
+    <string name="catch_ball">Поймай шарик</string>
+    <string name="catch_ball_description">Когда появится шарик, нажмите на него как можно быстрее</string>
+    <string name="red">Красный</string>
+    <string name="purple">Фиолетовый</string>
+    <string name="pink">Розовый</string>
+    <string name="blue">Синий</string>
+    <string name="green">Зеленый</string>
+    <string name="teal">Бирюзовый</string>
+    <string name="orange">Оранжевый</string>
+    <string name="grey">Серый</string>
+    <string name="yellow">Желтый</string>
+    <string name="find_color">Найди цвет</string>
+    <string name="find_color_description">Когда меняется слово, выберите соответствующий цвет как можно быстре</string>
+    <string name="brown">Коричневый</string>
+    <string name="catch_color">Поймай цвет</string>
+    <string name="catch_color_description">Нажимайте на зеленый цвет как можно быстрее. Пропускайте красный цвет</string>
+    <string name="sec">сек</string>
+    <string name="number_of_rounds">Количество раундов:</string>
+    <string name="number_of_repetitions_in_training">Количество повторений упражнения</string>
+    <string name="change_color_small_desc">Реакция на смену цвета</string>
+    <string name="find_number_small_desc">По текстовому представлению</string>
+    <string name="catch_ball_desc">Реакция на движущийся шарик</string>
+    <string name="comparison_numbers_desc">Сравни числа и выбери большее</string>
+    <string name="find_color_desc">По текстовому представлению</string>
+    <string name="catch_color_desc">Реакция на смену цвета ячеек</string>
+
+    <string name="menu">Меню</string>
+    <string name="menu_description">Делай различные упражнения каждый день и очень скоро ты увидишь результат</string>
+    <string name="rate_us">Оцините нас</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="ok">Ок</string>
+    <string name="open_with_ads">Открыть с помощью рекламы</string>
+    <string name="blocked">Заблокировано</string>
+    <string name="blocked_message">Вам нужно пройти предыдущий уровень, чтобы открыть этот</string>
+    <string name="settings">Настройки</string>
+    <string name="no_loaded">Не удалось загрузить. Повторите попытку позже или проверьте подключение к Интернету</string>
+    <string name="colored_text">Цветной текст</string>
+    <string name="colored_text_desc">Реакция на соответсвие текста цвету</string>
+    <string name="colored_text_description">Нажмите на рамку, как только цвет совпадет с текстом. Делайту это как можно быстрее</string>
+    <string name="math">Математика</string>
+    <string name="math_description">Выбирите правильный ответ как можно быстрее</string>
+    <string name="math_desc">Решений простых примеров на скорость</string>
+</resources>

@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:icon="@drawable/ic_baseline_star_rate_24"
+        app:key="rate_us"
+        app:title="@string/rate_us"
+        >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://play.google.com/store/apps/details?id=com.v.nevi.p.sv.android.reaction"/>
+    </Preference>
+    <Preference
+        android:icon="@drawable/ic_baseline_policy_24"
+        app:key="privacy_policy"
+        app:title="@string/privacy_policy">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://vladandroiddev.github.io/reactiontrainingprivacy"/>
+    </Preference>
+
+</PreferenceScreen>

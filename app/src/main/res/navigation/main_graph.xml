@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/menu_dest">
+
+    <fragment
+        android:id="@+id/menu_dest"
+        android:name="com.v.nevi.p.sv.android.reaction.menu.MenuFragment"
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/from_menu_to_exercise"
+            app:destination="@id/exercise_dest" >
+
+            <argument
+                android:name="id"
+                app:argType="string"/>
+
+        </action>
+        <action
+            android:id="@+id/action_menu_dest_to_settingsFragment"
+            app:destination="@id/settings_dest" />
+        <action
+            android:id="@+id/action_menu_dest_to_menuDialogFragment"
+            app:destination="@id/menu_dialog_dest" >
+
+            <argument
+                android:name="id"
+                app:argType="string"/>
+
+
+        </action>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/exercise_dest"
+        android:name="com.v.nevi.p.sv.android.reaction.exercises.ExerciseFragment"
+        android:label="ExerciseFragment" >
+        <action
+            android:id="@+id/to_result"
+            app:destination="@id/result_dest" >
+
+            <argument
+                android:name="res"
+                app:argType="com.v.nevi.p.sv.android.reaction.exercises.Result"/>
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/result_dest"
+        android:name="com.v.nevi.p.sv.android.reaction.result.ResultFragment"
+        android:label="ResultFragment" >
+
+        <action
+            android:id="@+id/to_menu"
+            app:popUpTo="@id/menu_dest"
+            app:popUpToInclusive="false"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.v.nevi.p.sv.android.reaction.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <dialog
+        android:id="@+id/menu_dialog_dest"
+        android:name="com.v.nevi.p.sv.android.reaction.menu.dialog.MenuDialogFragment"
+        android:label="menu_dialog_fragment"
+        tools:layout="@layout/menu_dialog_fragment" />
+
+</navigation>
