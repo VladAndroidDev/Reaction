@@ -11,6 +11,6 @@ class CatchBallData: Data() {
     val isMoving:LiveData<Boolean> = _isMoving
 
     fun setIsMoving(isMoving:Boolean){
-        _isMoving.value = isMoving
+        _isMoving.postValue(isMoving)
     }
 }

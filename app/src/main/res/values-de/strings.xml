@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reaktionstraining</string>
+    <string name="start">Start</string>
+
+    <string name="results">Ergebnisse</string>
+    <string name="repeat">Wiederholen sie</string>
+    <string name="home">Startseite</string>
+    <string name="change_color">Farbwechsel</string>
+    <string name="change_color_description">Klicken Sie so schnell wie möglich auf den Rahmen, wenn Sie den Farbwechsel sehen</string>
+    <string name="one">Einer</string>
+    <string name="two">Zwei</string>
+    <string name="three">Drei</string>
+    <string name="four">Vier</string>
+    <string name="five">Fünf</string>
+    <string name="six">Sechs</string>
+    <string name="seven">Sieben</string>
+    <string name="eight">Acht</string>
+    <string name="nine">Neun</string>
+    <string name="reaction_time_millisec">Reaktionszeit (Millisekunde):</string>
+    <string name="number_of_mistakes">Anzahl Fehler:</string>
+    <string name="the_number_of_errors_should_not_exceed">Die Anzahl der Fehler sollte nicht überschreiten</string>
+    <string name="minimum_limit_for_passing">Mindestlimit zum Bestehen</string>
+    <string name="test_passed">Test bestanden!</string>
+    <string name="test_failed">Im Test durchgefallen! </string>
+    <string name="many_mistakes">Sie haben viele Fehler gemacht</string>
+    <string name="many_time">Ihre Zeit hat das Mindestlimit überschritten</string>
+    <string name="сongratulations">Herzlichen Glückwunsch, Reaktionstest bestanden</string>
+    <string name="comparison_numbers">Vergleich von Zahlen</string>
+    <string name="comparison_numbers_description">Schauen Sie auf den Punkt in der Mitte und wählen Sie so schnell wie möglich die größte Zahl</string>
+
+
+    <string name="find_number">Eine Nummer finden</string>
+    <string name="find_number_description">Wenn sich das Wort ändert, wählen Sie die entsprechende Nummer so schnell wie möglich aus.</string>
+    <string name="catch_ball">Fang den Ball</string>
+    <string name="catch_ball_description">Klicke so schnell wie möglich auf den sich bewegenden Ball</string>
+    <string name="red">Rot</string>
+    <string name="purple">Violett</string>
+    <string name="pink">Rosa</string>
+    <string name="blue">Blau</string>
+    <string name="green">Grün</string>
+    <string name="teal">Blaugrün</string>
+    <string name="orange">Orange</string>
+    <string name="grey">Grau</string>
+    <string name="yellow">Gelb</string>
+    <string name="find_color">Farbe finden</string>
+    <string name="find_color_description">In jeder Runde ändert sich das Wort, klicken Sie so schnell wie möglich auf die entsprechende Farbe</string>
+    <string name="brown">Braun</string>
+    <string name="catch_color">Fangen Sie die Farbe</string>
+    <string name="catch_color_description">Klicken Sie so schnell wie möglich auf die grüne Farbe. Vermeiden Sie es, auf die rote Farbe zu klicken</string>
+    <string name="sec">sec</string>
+    <string name="number_of_rounds">Anzahl Runden:</string>
+    <string name="number_of_repetitions_in_training">Anzahl der Wiederholungen im Training</string>
+    <string name="change_color_small_desc">Reaktion auf Farbveränderung</string>
+    <string name="find_number_small_desc">Suche durch textuelle Darstellung</string>
+    <string name="catch_ball_desc">Reaktion auf sich bewegenden Ball</string>
+    <string name="comparison_numbers_desc">Vergleichen Sie die Zahlen und wählen Sie die höhere aus</string>
+    <string name="find_color_desc">Suche durch textuelle Darstellung</string>
+    <string name="catch_color_desc">Reaktion auf Veränderung der Zellfarbe</string>
+
+    <string name="menu">Menü</string>
+    <string name="menu_description">Mache jeden Tag verschiedene Übungen. Sie werden sehr bald Ergebnisse sehen</string>
+    <string name="rate_us">Rate us</string>
+    <string name="privacy_policy">Datenschutz-Bestimmungen</string>
+    <string name="ok">OK</string>
+    <string name="open_with_ads">Mit Werbung öffnen</string>
+    <string name="blocked">Blockiert</string>
+    <string name="blocked_message">Sie müssen das vorherige Level passieren, um das nächste zu öffnen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="no_loaded">Download fehlgeschlagen, versuchen Sie es später erneut oder überprüfen Sie die Internetverbindungen</string>
+    <string name="colored_text">Farbiger Text</string>
+    <string name="colored_text_desc">Reaktion auf passende Farbe und Text</string>
+    <string name="colored_text_description">Klicken Sie auf den Rahmen, sobald die Farbe mit dem Text übereinstimmt. Mach es so schnell du kannst</string>
+    <string name="math">Mathematik</string>
+    <string name="math_description">Wählen Sie so schnell wie möglich die richtige Antwort aus</string>
+    <string name="math_desc">Lösen Sie mathematische Probleme so schnell wie möglich</string>
+</resources>

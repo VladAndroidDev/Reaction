@@ -17,7 +17,7 @@ private const val MIN_DELAY = 2
 
 class CatchBallLogic : Logic() {
 
-    private val coroutine = CoroutineScope(Dispatchers.Main.immediate)
+    private val coroutine = CoroutineScope(Dispatchers.Default)
     private  var job: Job?=null
     override lateinit var dataLogic:CatchBallData
 
@@ -25,7 +25,7 @@ class CatchBallLogic : Logic() {
         dataLogic = CatchBallData()
     }
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         val time:Long = (GenerateRandomNumber.execute(
             MIN_DELAY,
             MAX_DELAY

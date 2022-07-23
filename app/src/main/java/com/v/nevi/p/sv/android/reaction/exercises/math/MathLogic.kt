@@ -24,7 +24,7 @@ class MathLogic : Logic() {
     private var previousOperation: Int? = null
     private lateinit var operationStr: String
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         var operation: Int
         if (previousOperation == null) {
             operation = GenerateRandomNumber.execute(0, 3)

@@ -18,7 +18,7 @@
     <string name="nine">Nine</string>
     <string name="reaction_time_millisec">Reaction time (millisec):</string>
     <string name="number_of_mistakes">Number of mistakes:</string>
-    <string name="the_number_of_errors_should_not_exceed">The number of errors should not exceed</string>
+    <string name="the_number_of_errors_should_not_exceed">The number of mistake should not exceed</string>
     <string name="minimum_limit_for_passing">Minimum limit for passing</string>
     <string name="test_passed">Test passed!</string>
     <string name="test_failed">Test failed! </string>

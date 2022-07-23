@@ -12,7 +12,7 @@ class FindNumberData: Data(){
     val number: LiveData<Int> = _number
 
     fun setNumber(number:Int){
-        _number.value = number
+        _number.postValue(number)
     }
 
 }

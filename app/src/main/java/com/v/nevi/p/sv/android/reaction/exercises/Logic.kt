@@ -5,7 +5,7 @@ import android.view.View
 
 abstract class Logic:IBindable {
 
-    abstract fun createData(onDataCreatedCallback:()->Unit)
+    abstract suspend fun createData(onDataCreatedCallback:()->Unit)
 
     abstract fun isAnswerCorrect(v:View):Boolean
 

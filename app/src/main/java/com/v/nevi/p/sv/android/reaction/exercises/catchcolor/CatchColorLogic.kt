@@ -12,14 +12,13 @@ import com.v.nevi.p.sv.android.reaction.exercises.ExerciseViewModel
 import com.v.nevi.p.sv.android.reaction.exercises.Logic
 import com.v.nevi.p.sv.android.reaction.utils.GenerateRandomNumber
 import kotlinx.coroutines.*
-import kotlinx.parcelize.Parcelize
 
 private const val MAX_DELAY = 4
 private const val MIN_DELAY = 2
 
 class CatchColorLogic:Logic() {
 
-    private val coroutineScope = CoroutineScope(Dispatchers.Main.immediate)
+    private val coroutineScope = CoroutineScope(Dispatchers.Default)
 
     private val listColors:MutableList<Int> = mutableListOf()
     init {
@@ -33,7 +32,7 @@ class CatchColorLogic:Logic() {
     private var time:Long?=null
     private var job:Job?=null
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         if (oldIndex == null) {
             newIndex = GenerateRandomNumber.execute(0, listColors.size - 1)
         } else {
@@ -52,7 +51,7 @@ class CatchColorLogic:Logic() {
         }
         dataLogic.setOnDataCreate()
         if (isRed) {
-            coroutineScope.launch {
+            job = coroutineScope.launch {
                 delay(time!!)
                 createData(onDataCreatedCallback)
             }

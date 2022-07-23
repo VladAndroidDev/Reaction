@@ -19,7 +19,7 @@ private const val MAX_DELAY = 2
 
 class ColoredTextLogic : Logic() {
 
-    private val coroutine = CoroutineScope(Dispatchers.Main.immediate)
+    private val coroutine = CoroutineScope(Dispatchers.Default)
     private lateinit var job: Job
     private val colors: MutableList<Color> = mutableListOf<Color>().apply {
         add(Color(R.string.red, R.color.red_500))
@@ -35,7 +35,7 @@ class ColoredTextLogic : Logic() {
 
     private var color: Color? = null
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         color = null
         val numberFalse = GenerateRandomNumber.execute(MIN_FALSE, MAX_FALSE)
         job = coroutine.launch {
@@ -47,15 +47,13 @@ class ColoredTextLogic : Logic() {
                 } while (indexColor == indexName)
                 val colorId = colors[indexColor].colorId
                 val nameId = colors[indexName].nameId
-                dataLogic.setColorId(colorId)
-                dataLogic.setText(nameId)
+                dataLogic.setTextAsync(nameId,colorId)
                 val delay = (GenerateRandomNumber.execute(MIN_DELAY, MAX_DELAY) * 1000).toLong()
                 delay(delay)
                 if (i == numberFalse - 1) {
                     val index = GenerateRandomNumber.execute(0, colors.size - 1)
                     color = colors[index]
-                    dataLogic.setText(color!!.nameId)
-                    dataLogic.setColorId(color!!.colorId)
+                    dataLogic.setTextAsync(color!!.nameId,color!!.colorId)
                     onDataCreatedCallback.invoke()
                 }
             }

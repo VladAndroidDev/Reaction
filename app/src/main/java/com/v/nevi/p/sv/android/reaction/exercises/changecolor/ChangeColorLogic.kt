@@ -17,7 +17,7 @@ private const val MIN_DELAY = 2
 
 class ChangeColorLogic : Logic() {
 
-    private val coroutine = CoroutineScope(Dispatchers.Main.immediate)
+    private val coroutine = CoroutineScope(Dispatchers.Default)
     private lateinit var job:Job
     private var indexColor=-1
     private val colors = ColorsForGame.colorsId
@@ -27,9 +27,9 @@ class ChangeColorLogic : Logic() {
         dataLogic = ChangeColorData()
     }
 
-    override fun createData(onDataCreatedCallback:()->Unit) {
+    override suspend fun createData(onDataCreatedCallback:()->Unit) {
         indexColor=-1
-        dataLogic.setColorId(R.color.white)
+        dataLogic.setColorIdAsync(R.color.white)
         val time:Long = (GenerateRandomNumber.execute(MIN_DELAY, MAX_DELAY)*1000).toLong()
         var newColorIndex:Int
         do {
@@ -38,7 +38,7 @@ class ChangeColorLogic : Logic() {
         indexColor = newColorIndex
         job = coroutine.launch {
             delay(time)
-            dataLogic.setColorId(colors[indexColor])
+            dataLogic.setColorIdAsync(colors[indexColor])
             onDataCreatedCallback.invoke()
         }
     }

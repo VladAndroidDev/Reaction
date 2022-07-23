@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:onClick="@{(v)->viewmodel.onAnswerClicked(v)}"
+            android:background="@color/white"
             app:moving="@{data.isMoving}"
             />
 

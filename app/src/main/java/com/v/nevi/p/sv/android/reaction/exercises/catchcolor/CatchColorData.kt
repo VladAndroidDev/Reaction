@@ -11,6 +11,6 @@ class CatchColorData: Data() {
     val onDataCreated: LiveData<Boolean> = _onDataCreated
 
     fun setOnDataCreate(){
-        _onDataCreated.value = true
+        _onDataCreated.postValue(true)
     }
 }

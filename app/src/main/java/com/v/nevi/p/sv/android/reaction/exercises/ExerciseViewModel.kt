@@ -8,6 +8,7 @@ import androidx.lifecycle.*
 import com.v.nevi.p.sv.android.reaction.BaseViewModel
 import com.v.nevi.p.sv.android.reaction.Event
 import com.v.nevi.p.sv.android.reaction.ReactionPreferencesManager
+import kotlinx.coroutines.launch
 
 interface OnProgressChangedSliderListener {
 
@@ -55,8 +56,10 @@ class ExerciseViewModel(id: String) : BaseViewModel(), OnProgressChangedSliderLi
     private val timer: ExerciseTimer = ExerciseTimer()
 
     private fun nextRound() {
-        exercise.createData {
-            timer.start()
+        viewModelScope.launch {
+            exercise.createData {
+                timer.start()
+            }
         }
     }
 

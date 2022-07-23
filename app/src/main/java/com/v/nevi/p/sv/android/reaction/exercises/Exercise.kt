@@ -4,47 +4,62 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 
-class Exercise(val id:String, val nameId:Int, val descriptionId:Int, val smallDescription:Int, val minimumTime:Long, private val logic: Logic,
-               val minNumberRounds:Int,
-               val penaltyTime:Long = 1000,
-               var isOpened: Boolean = false) {
+class Exercise(
+    val id: String,
+    val nameId: Int,
+    val descriptionId: Int,
+    val smallDescription: Int,
+    val minimumTime: Long,
+    private val logic: Logic,
+    val minNumberRounds: Int,
+    val penaltyTime: Long = 1000,
+    var isOpened: Boolean = false
+) {
 
-    var bestTime:Long=0
-    var lastNumberRounds:Int = 0
+    var bestTime: Long = 0
+    var lastNumberRounds: Int = 0
 
-    fun createData(onDataCreatedCallback:()->Unit){
-        logic.createData(onDataCreatedCallback)
+    suspend fun createData(onDataCreatedCallback: () -> Unit) = withContext(Dispatchers.Default) {
+            logic.createData(onDataCreatedCallback)
     }
 
-    fun onAnswerSelected(v: View):Boolean{
+
+    fun onAnswerSelected(v: View): Boolean {
         return logic.isAnswerCorrect(v)
     }
 
-    fun bindData(viewModel: ExerciseViewModel, inflater: LayoutInflater, container:ViewGroup, lifecycleOwner: LifecycleOwner){
-        logic.bindData(viewModel,inflater,container, lifecycleOwner)
+    fun bindData(
+        viewModel: ExerciseViewModel,
+        inflater: LayoutInflater,
+        container: ViewGroup,
+        lifecycleOwner: LifecycleOwner
+    ) {
+        logic.bindData(viewModel, inflater, container, lifecycleOwner)
     }
 
-    fun recreateData(){
+    fun recreateData() {
         logic.create()
     }
 
-    fun getUserStory():ExerciseUserStory{
+    fun getUserStory(): ExerciseUserStory {
         return ExerciseUserStory(id, bestTime, lastNumberRounds, isOpened)
     }
 
-    fun setUserStory(userStory: ExerciseUserStory){
+    fun setUserStory(userStory: ExerciseUserStory) {
         bestTime = userStory.bestTime
         lastNumberRounds = userStory.lastNumberRounds
         isOpened = userStory.isOpened
     }
 
     override fun equals(other: Any?): Boolean {
-        if(other == null){
+        if (other == null) {
             return false
         }
-        if(other is Exercise && other.id == id){
+        if (other is Exercise && other.id == id) {
             return true
         }
         return false
@@ -64,4 +79,10 @@ class Exercise(val id:String, val nameId:Int, val descriptionId:Int, val smallDe
         return result
     }
 }
-class ExerciseUserStory(val id: String,val bestTime:Long,val lastNumberRounds: Int,val isOpened: Boolean)
+
+class ExerciseUserStory(
+    val id: String,
+    val bestTime: Long,
+    val lastNumberRounds: Int,
+    val isOpened: Boolean
+)

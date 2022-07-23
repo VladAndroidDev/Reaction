@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import com.v.nevi.p.sv.android.reaction.exercises.Data
 import kotlinx.parcelize.Parcelize
 
-open class ChangeColorData:Data(){
+open class ChangeColorData : Data() {
 
     private val _colorId: MutableLiveData<Int> = MutableLiveData()
     val colorId: LiveData<Int> = _colorId
 
-    fun setColorId(colorId:Int){
-        _colorId.value = colorId
+    fun setColorIdAsync(colorId: Int) {
+        _colorId.postValue(colorId)
     }
 
 }

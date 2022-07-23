@@ -14,8 +14,8 @@ class ComparisonNumbersData : Data(){
     val secondValue: LiveData<String> = _secondValue
 
     fun setValues(firstValue: String,secondValue: String){
-        _firstValue.value = firstValue
-        _secondValue.value = secondValue
+        _firstValue.postValue(firstValue)
+        _secondValue.postValue(secondValue)
     }
 
 }

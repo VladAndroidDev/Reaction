@@ -36,7 +36,7 @@ class FindNumberLogic:Logic() {
         dataLogic = FindNumberData()
     }
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         var index:Int
         if(lastNumber==null) {
             index = GenerateRandomNumber.execute(0, numbersId.size - 1)

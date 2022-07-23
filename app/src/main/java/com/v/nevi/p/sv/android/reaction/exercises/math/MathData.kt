@@ -10,7 +10,7 @@ class MathData: Data() {
     val task: LiveData<String> = _task
 
     fun setTask(task:String){
-        _task.value = task
+        _task.postValue(task)
     }
 
 }

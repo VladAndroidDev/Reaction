@@ -12,7 +12,7 @@ class FindColorData:Data() {
     val colorNameId:LiveData<Int> = _colorNameId
 
     fun setColorNameId(colorNameId:Int){
-        _colorNameId.value = colorNameId
+        _colorNameId.postValue(colorNameId)
     }
 
 }

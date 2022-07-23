@@ -30,7 +30,7 @@ class FindColorLogic:Logic() {
 
     private var lastNameId:Int?=null
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         var index:Int
         if(lastNameId==null) {
             index = GenerateRandomNumber.execute(0, colors.size - 1)

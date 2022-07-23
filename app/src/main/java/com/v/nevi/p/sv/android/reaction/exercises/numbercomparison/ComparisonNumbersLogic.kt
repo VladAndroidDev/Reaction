@@ -25,7 +25,7 @@ class ComparisonNumbersLogic : Logic(){
     }
 
 
-    override fun createData(onDataCreatedCallback: () -> Unit) {
+    override suspend fun createData(onDataCreatedCallback: () -> Unit) {
         val firstValue = GenerateRandomNumber.execute(START_RANGE, END_RANGE)
         var secondValue:Int
         do {
